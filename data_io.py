@@ -87,19 +87,49 @@ def read_trajectory_labels(label_path: str):
 
 
 def label_trajectories(target_directory: str):
-    os.mkdir(target_directory + "/labeled_trajectories")
+    # os.mkdir(target_directory + "/labeled_trajectories")
 
+    # read label file and initialize label index:
     labels_t_start, labels_t_end, labels_labels = read_trajectory_labels(target_directory + "/labels.txt")
+    label_index = 0
 
-    # for file_name in os.listdir(target_directory + "/Trajectory"):
-    #     read_trajectory(target_directory + "/Trajectory/" + file_name)
-    #
-    #
-    #
-    #     break
+    # get sorted trajectory filenames
+    sorted_trajectory_names = os.listdir(target_directory + "/Trajectory")
+    sorted_trajectory_names = sorted(sorted_trajectory_names, key=lambda x: int(x.split(".")[0]))
 
-    print(len(labels_labels))
-    print(len(os.listdir(target_directory + "/Trajectory")))
+    # iterate through gps path files:
+    for file_name in sorted_trajectory_names:
+
+        # get trajectory:
+        times, latitudes, longitudes, altitudes = read_trajectory(target_directory + "/Trajectory/" + file_name)
+        for t in times:
+
+            # skip all labels of past times:
+            while labels_t_end[label_index] < t:
+                label_index += 1
+
+            if t < labels_t_start[label_index]:
+                continue
+
+            # TODO: if not continued: you can now copy / store stuff ...
+            else:
+                print("yo: {}".format(t))
+                print(file_name)
+                print(label_index)
+                print(labels_t_start[label_index])
+                print(labels_t_end[label_index])
+
+                exit()
+            # print(labels_t_start[0])
+            # print(labels_t_end[0])
+            # print(labels_t_start[label_index])
+            # print(labels_t_end[label_index])
+            # print(t)
+            # break
+
+    # print(label_index)
+    # print(len(labels_labels))
+    # print(len(os.listdir(target_directory + "/Trajectory")))
 
 
 def main():
@@ -111,10 +141,11 @@ def main():
     label_trajectories(target_directory)
 
 def main_data_import():
-    tmp_data_path = "/media/jlscience/Volume/Downloads/Geolife Trajectories 1.3/Geolife Trajectories 1.3/Data/"
+    tmp_data_path = "/home/julius/Downloads/Geolife Trajectories 1.3/Data/"
     workspace_data_path = "data/trajectories/"
     copy_useful_data_to_workspace(tmp_data_path, workspace_data_path)
 
 
 if __name__ == '__main__':
     main()
+    # main_data_import()
