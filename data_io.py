@@ -132,6 +132,12 @@ def label_trajectories(target_directory: str):
     # print(len(os.listdir(target_directory + "/Trajectory")))
 
 
+def create_map_with_marker():
+    # https: // developers.google.com / maps / documentation
+    # https://developers.google.com/maps/documentation/javascript/adding-a-google-map
+    pass
+
+
 def main():
     # trajectory_path = "data/trajectories/010/Trajectory/20070804033032.plt"
     # _, _, _, _ = read_trajectory(trajectory_path)
