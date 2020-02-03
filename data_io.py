@@ -3,6 +3,7 @@ import os
 import shutil
 import csv
 from datetime import datetime
+from tqdm import tqdm
 
 
 def copy_useful_data_to_workspace(tmp_data_path: str, workspace_data_path: str):
@@ -87,7 +88,6 @@ def read_trajectory_labels(label_path: str):
 
 
 def label_trajectories(target_directory: str):
-    # os.mkdir(target_directory + "/labeled_trajectories")
 
     # read label file and initialize label index:
     labels_t_start, labels_t_end, labels_labels = read_trajectory_labels(target_directory + "/labels.txt")
@@ -97,39 +97,40 @@ def label_trajectories(target_directory: str):
     sorted_trajectory_names = os.listdir(target_directory + "/Trajectory")
     sorted_trajectory_names = sorted(sorted_trajectory_names, key=lambda x: int(x.split(".")[0]))
 
-    # iterate through gps path files:
-    for file_name in sorted_trajectory_names:
+    # open file to write into:
+    with open(target_directory + "/labeled_trajectories.csv", "w") as csv_file:
+        writer = csv.writer(csv_file, delimiter="\t")
 
-        # get trajectory:
-        times, latitudes, longitudes, altitudes = read_trajectory(target_directory + "/Trajectory/" + file_name)
-        for t in times:
+        # used for finishing function:
+        finished_label_file = False
 
-            # skip all labels of past times:
-            while labels_t_end[label_index] < t:
-                label_index += 1
+        # iterate through gps path files:
+        for file_name in sorted_trajectory_names:
 
-            if t < labels_t_start[label_index]:
-                continue
+            if finished_label_file:
+                break
 
-            # TODO: if not continued: you can now copy / store stuff ...
-            else:
-                print("yo: {}".format(t))
-                print(file_name)
-                print(label_index)
-                print(labels_t_start[label_index])
-                print(labels_t_end[label_index])
+            # get trajectory:
+            times, latitudes, longitudes, altitudes = read_trajectory(target_directory + "/Trajectory/" + file_name)
 
-                exit()
-            # print(labels_t_start[0])
-            # print(labels_t_end[0])
-            # print(labels_t_start[label_index])
-            # print(labels_t_end[label_index])
-            # print(t)
-            # break
+            for t, lat, long, alt in zip(times, latitudes, longitudes, altitudes):
 
-    # print(label_index)
-    # print(len(labels_labels))
-    # print(len(os.listdir(target_directory + "/Trajectory")))
+                # skip all labels of past times:
+                try:
+                    while labels_t_end[label_index] < t:
+                        # divide different paths:
+                        writer.writerow(["", "", "", "", ""])
+                        label_index += 1
+                # thrown if labels.txt reaches end:
+                except IndexError:
+                    finished_label_file = True
+                    break
+
+                # skip points below T_0:
+                if t < labels_t_start[label_index]:
+                    continue
+
+                writer.writerow([t, lat, long, alt, labels_labels[label_index]])
 
 
 def create_map_with_marker():
@@ -143,8 +144,14 @@ def main():
     # _, _, _, _ = read_trajectory(trajectory_path)
     # label_path = "data/trajectories/010/labels.txt"
     # read_trajectory_labels(label_path)
-    target_directory = "data/trajectories/010"
-    label_trajectories(target_directory)
+    pass
+
+
+def main_label_data():
+    dirs = ["data/trajectories/" + directory for directory in os.listdir("data/trajectories")]
+    for directory in tqdm(dirs):
+        label_trajectories(directory)
+
 
 def main_data_import():
     tmp_data_path = "/home/julius/Downloads/Geolife Trajectories 1.3/Data/"
@@ -154,4 +161,3 @@ def main_data_import():
 
 if __name__ == '__main__':
     main()
-    # main_data_import()
