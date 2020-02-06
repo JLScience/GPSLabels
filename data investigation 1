@@ -1,0 +1,70 @@
+Name, number trajectories, mean length of trajectory, max length..., mean time used for trajectory, max time ..., mean time between gps measurements	
+010: skipped
+020: Num tras: 177	 Mean tra len: 795	 Max tra len: 21994	 mean time span: 28min	 max time span: 643min	 mean time step size: 2s
+021: Num tras: 17	 Mean tra len: 111	 Max tra len: 355	 mean time span: 113min	 max time span: 445min	 mean time step size: 55s
+052: Num tras: 285	 Mean tra len: 498	 Max tra len: 5001	 mean time span: 52min	 max time span: 457min	 mean time step size: 19s
+053: Num tras: 20	 Mean tra len: 13	 Max tra len: 57	 mean time span: 33min	 max time span: 142min	 mean time step size: 132s
+056: Num tras: 30	 Mean tra len: 41	 Max tra len: 325	 mean time span: 53min	 max time span: 840min	 mean time step size: 98s
+058: Num tras: 31	 Mean tra len: 35	 Max tra len: 103	 mean time span: 22min	 max time span: 93min	 mean time step size: 35s
+059: skipped
+060: Num tras: 1	 Mean tra len: 7	 Max tra len: 7	 	 mean time span: 21min	 max time span: 21min	 mean time step size: 183s
+062: Num tras: 542	 Mean tra len: 513	 Max tra len: 7413	 mean time span: 42min	 max time span: 681min	 mean time step size: 6s
+064: Num tras: 68	 Mean tra len: 553	 Max tra len: 2792	 mean time span: 24min	 max time span: 125min	 mean time step size: 3s
+065: Num tras: 120	 Mean tra len: 3158	 Max tra len: 22079	 mean time span: 50min	 max time span: 607min	 mean time step size: 1s
+067: Num tras: 86	 Mean tra len: 767	 Max tra len: 5076	 mean time span: 44min	 max time span: 453min	 mean time step size: 11s
+068: Num tras: 942	 Mean tra len: 728	 Max tra len: 9854	 mean time span: 29min	 max time span: 369min	 mean time step size: 2s
+069: Num tras: 18	 Mean tra len: 162	 Max tra len: 1459	 mean time span: 70min	 max time span: 408min	 mean time step size: 263s
+073: Num tras: 54	 Mean tra len: 195	 Max tra len: 1213	 mean time span: 14min	 max time span: 185min	 mean time step size: 3s
+075: Num tras: 12	 Mean tra len: 592	 Max tra len: 4610	 mean time span: 74min	 max time span: 673min	 mean time step size: 5s
+076: Num tras: 6	 Mean tra len: 145	 Max tra len: 187	 mean time span: 721min	 max time span: 994min	 mean time step size: 292s
+078: Num tras: 67	 Mean tra len: 616	 Max tra len: 8393	 mean time span: 30min	 max time span: 435min	 mean time step size: 4s
+080: Num tras: 13	 Mean tra len: 45	 Max tra len: 115	 mean time span: 75min	 max time span: 601min	 mean time step size: 72s
+081: Num tras: 62	 Mean tra len: 645	 Max tra len: 5150	 mean time span: 31min	 max time span: 244min	 mean time step size: 5s
+082: Num tras: 107	 Mean tra len: 487	 Max tra len: 3759	 mean time span: 30min	 max time span: 731min	 mean time step size: 3s
+084: Num tras: 405	 Mean tra len: 597	 Max tra len: 6273	 mean time span: 43min	 max time span: 527min	 mean time step size: 11s
+085: Num tras: 1087	 Mean tra len: 383	 Max tra len: 6727	 mean time span: 24min	 max time span: 678min	 mean time step size: 6s
+086: Num tras: 7	 Mean tra len: 72	 Max tra len: 168	 mean time span: 83min	 max time span: 282min	 mean time step size: 61s
+087: Num tras: 5	 Mean tra len: 21	 Max tra len: 35	 mean time span: 90min	 max time span: 400min	 mean time step size: 289s
+088: skipped
+089: Num tras: 29	 Mean tra len: 608	 Max tra len: 2694	 mean time span: 141min	 max time span: 677min	 mean time step size: 63s
+091: Num tras: 59	 Mean tra len: 11	 Max tra len: 382	 mean time span: 7min	 max time span: 33min	 mean time step size: 87s
+092: Num tras: 14	 Mean tra len: 81	 Max tra len: 203	 mean time span: 21min	 max time span: 78min	 mean time step size: 17s
+096: Num tras: 103	 Mean tra len: 427	 Max tra len: 2781	 mean time span: 27min	 max time span: 660min	 mean time step size: 3s
+097: Num tras: 24	 Mean tra len: 60	 Max tra len: 188	 mean time span: 211min	 max time span: 887min	 mean time step size: 117s
+098: Num tras: 24	 Mean tra len: 28	 Max tra len: 117	 mean time span: 24min	 max time span: 182min	 mean time step size: 56s
+100: Num tras: 1	 Mean tra len: 8	 Max tra len: 8	 	 mean time span: 0min	 max time span: 0min	 mean time step size: 1s
+101: Num tras: 6	 Mean tra len: 214	 Max tra len: 616	 mean time span: 32min	 max time span: 83min	 mean time step size: 20s
+102: Num tras: 55	 Mean tra len: 108	 Max tra len: 858	 mean time span: 12min	 max time span: 113min	 mean time step size: 7s
+104: Num tras: 3	 Mean tra len: 106	 Max tra len: 185	 mean time span: 26min	 max time span: 63min	 mean time step size: 11s
+105: Num tras: 28	 Mean tra len: 67	 Max tra len: 353	 mean time span: 78min	 max time span: 562min	 mean time step size: 54s
+106: Num tras: 2	 Mean tra len: 763	 Max tra len: 775	 mean time span: 859min	 max time span: 930min	 mean time step size: 67s
+107: Num tras: 4	 Mean tra len: 33	 Max tra len: 80	 mean time span: 46min	 max time span: 107min	 mean time step size: 87s
+108: Num tras: 9	 Mean tra len: 51	 Max tra len: 184	 mean time span: 292min	 max time span: 848min	 mean time step size: 910s
+110: Num tras: 3	 Mean tra len: 183	 Max tra len: 542	 mean time span: 28min	 max time span: 86min	 mean time step size: 6s
+111: Num tras: 33	 Mean tra len: 158	 Max tra len: 1328	 mean time span: 98min	 max time span: 497min	 mean time step size: 78s
+112: Num tras: 140	 Mean tra len: 391	 Max tra len: 4365	 mean time span: 32min	 max time span: 501min	 mean time step size: 14s
+114: Num tras: 2	 Mean tra len: 27	 Max tra len: 30	 mean time span: 48min	 max time span: 67min	 mean time step size: 102s
+115: Num tras: 117	 Mean tra len: 862	 Max tra len: 4661	 mean time span: 113min	 max time span: 929min	 mean time step size: 37s
+116: skipped
+117: Num tras: 14	 Mean tra len: 20	 Max tra len: 43	 mean time span: 9min	 max time span: 22min	 mean time step size: 37s
+118: skipped
+124: skipped
+125: Num tras: 140	 Mean tra len: 436	 Max tra len: 4039	 mean time span: 28min	 max time span: 288min	 mean time step size: 5s
+126: Num tras: 428	 Mean tra len: 549	 Max tra len: 10628	 mean time span: 29min	 max time span: 600min	 mean time step size: 8s
+128: Num tras: 891	 Mean tra len: 495	 Max tra len: 6176	 mean time span: 50min	 max time span: 735min	 mean time step size: 10s
+129: Num tras: 15	 Mean tra len: 187	 Max tra len: 1459	 mean time span: 50min	 max time span: 276min	 mean time step size: 106s
+136: Num tras: 7	 Mean tra len: 12	 Max tra len: 17	 mean time span: 5min	 max time span: 15min	 mean time step size: 23s
+138: Num tras: 29	 Mean tra len: 52	 Max tra len: 156	 mean time span: 20min	 max time span: 86min	 mean time step size: 27s
+139: Num tras: 36	 Mean tra len: 35	 Max tra len: 184	 mean time span: 85min	 max time span: 848min	 mean time step size: 261s
+141: Num tras: 84	 Mean tra len: 3694	 Max tra len: 19835	 mean time span: 34min	 max time span: 221min	 mean time step size: 0s
+144: Num tras: 9	 Mean tra len: 1068	 Max tra len: 2694	 mean time span: 143min	 max time span: 451min	 mean time step size: 10s
+147: Num tras: 1	 Mean tra len: 6	 Max tra len: 6	 	 mean time span: 0min	 max time span: 0min	 mean time step size: 4s
+153: Num tras: 984	 Mean tra len: 311	 Max tra len: 5147	 mean time span: 46min	 max time span: 845min	 mean time step size: 11s
+154: Num tras: 44	 Mean tra len: 56	 Max tra len: 157	 mean time span: 25min	 max time span: 111min	 mean time step size: 26s
+161: Num tras: 25	 Mean tra len: 25	 Max tra len: 66	 mean time span: 11min	 max time span: 23min	 mean time step size: 34s
+163: Num tras: 362	 Mean tra len: 383	 Max tra len: 21655	 mean time span: 74min	 max time span: 858min	 mean time step size: 40s
+167: Num tras: 823	 Mean tra len: 558	 Max tra len: 16338	 mean time span: 22min	 max time span: 600min	 mean time step size: 8s
+170: Num tras: 14	 Mean tra len: 304	 Max tra len: 770	 mean time span: 8min	 max time span: 21min	 mean time step size: 2s
+174: Num tras: 3	 Mean tra len: 133	 Max tra len: 223	 mean time span: 64min	 max time span: 93min	 mean time step size: 28s
+175: Num tras: 11	 Mean tra len: 25	 Max tra len: 101	 mean time span: 41min	 max time span: 227min	 mean time step size: 111s
+179: Num tras: 310	 Mean tra len: 383	 Max tra len: 4102	 mean time span: 16min	 max time span: 156min	 mean time step size: 3s
