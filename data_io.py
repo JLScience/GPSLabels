@@ -184,10 +184,23 @@ def create_training_data_distance_time(target_directory: str):
                     if row_tmp != "":
                         p1 = [float(row_tmp[1]), float(row_tmp[2])]
                         p2 = [float(row[1]), float(row[2])]
-                        distances.append(int(gps_distance(p1, p2)+0.5))  # TODO: now in m as int
+                        distances.append(int(100*gps_distance(p1, p2)+0.5))  # TODO: now in dm as int
 
                     # store row for next step:
                     row_tmp = row
+
+
+def interpolate_training_data(target_directory: str, frequency: float):
+    data_tuples = read_training_data(target_directory + "/training_data.txt")
+    d0 = data_tuples[0]
+    print(d0[0])
+    print(d0[1])
+    # TODO: think about how the data should be passed
+    # d0 = data_tuples[50]
+    # new_times = np.arange(1/frequency, np.sum(d0[0]), 1/frequency)
+
+    # print(new_times.shape)
+    # print(np.interp(new_times, d0[0], d0[1]))
 
 
 ###################################################################
@@ -294,10 +307,10 @@ def main():
     get_user_stats_labels()
 
 
-def main_create_training_data():
-    data_path = "../_shared_data/GPSLabels/trajectories/"
-    for dir in os.listdir(data_path):
-        create_training_data_distance_time(data_path + dir)
+def main_data_import():
+    tmp_data_path = "/home/julius/Downloads/Geolife Trajectories 1.3/Data/"
+    workspace_data_path = "../_shared_data/GPSLabels/trajectories/"
+    copy_useful_data_to_workspace(tmp_data_path, workspace_data_path)
 
 
 def main_label_data():
@@ -307,12 +320,20 @@ def main_label_data():
         label_trajectories(directory)
 
 
-def main_data_import():
-    tmp_data_path = "/home/julius/Downloads/Geolife Trajectories 1.3/Data/"
-    workspace_data_path = "../_shared_data/GPSLabels/trajectories/"
-    copy_useful_data_to_workspace(tmp_data_path, workspace_data_path)
+def main_create_training_data():
+    data_path = "../_shared_data/GPSLabels/trajectories/"
+    for dir in os.listdir(data_path):
+        create_training_data_distance_time(data_path + dir)
+
+
+def main_interpolate_data():
+    data_path = "../_shared_data/GPSLabels/trajectories/"
+    interpolate_training_data(data_path + "010", frequency=0.2)
+
+
+
 
 
 if __name__ == '__main__':
-    main()
+    main_interpolate_data()
 
