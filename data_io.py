@@ -195,11 +195,9 @@ def create_training_data_distance_time(target_directory: str):
 ###################################################################
 
 
-def get_user_stats():
-    user_path = "/home/julius/PycharmProjects/_shared_data/GPSLabels/trajectories/"
+def get_user_stats_paths_and_times():
+    user_path = "../_shared_data/GPSLabels/trajectories/"
     for dir in sorted([dir for dir in os.listdir(user_path)], key=lambda dir: int(dir)):
-        if dir == "010":
-            continue
         data = read_training_data(user_path + dir + "/training_data.txt")
         lens = []
         ts = []
@@ -214,6 +212,20 @@ def get_user_stats():
             print(out_str.format(dir, len(data), int(np.mean(lens)), np.max(lens), int(np.mean(ts)/60), int(np.max(ts)/60), int(np.mean(tsteps))))
         else:
             print("{}: skipped".format(dir))
+
+
+def get_user_stats_labels():
+    user_path = "../_shared_data/GPSLabels/trajectories/"
+    labels = []
+    for dir in tqdm(sorted([dir for dir in os.listdir(user_path)], key=lambda dir: int(dir))):
+        data = read_training_data(user_path + dir + "/training_data.txt")
+        for tup in data:
+            labels.append(tup[2])
+
+    distinct_labels = set(labels)
+    for dl in distinct_labels:
+        dlc = labels.count(dl)
+        print("Label: {} \t Appearance: {}".format(dl, dlc))
 
 
 ###################################################################
@@ -253,11 +265,19 @@ def read_training_data(path: str):
     with open(path, "r") as file:
         reader = csv.reader(file, delimiter=";")
         data_tuples = []
-        for row in reader:
+        # special reading behaviour due to fields that may be too long an need error handling
+        while True:
+            try:
+                row = next(reader)
+            except csv.Error:
+                continue
+            except StopIteration:
+                break
             label = row[0]
             times = eval(row[1], {"__builtins__": None}, {})        # careful with eval (security)
             distances = eval(row[2], {"__builtins__": None}, {})    # careful with eval (security)
             data_tuples.append((times, distances, label))
+
     return data_tuples
 
 
@@ -271,25 +291,25 @@ def main():
     # _, _, _, _ = read_trajectory(trajectory_path)
     # label_path = "data/trajectories/010/labels.txt"
     # read_trajectory_labels(label_path)
-    get_user_stats()
+    get_user_stats_labels()
 
 
 def main_create_training_data():
-    data_path = "/home/julius/PycharmProjects/_shared_data/GPSLabels/trajectories/"
+    data_path = "../_shared_data/GPSLabels/trajectories/"
     for dir in os.listdir(data_path):
         create_training_data_distance_time(data_path + dir)
 
 
 def main_label_data():
-    dirs = ["/home/julius/PycharmProjects/_shared_data/GPSLabels/trajectories/" + directory for directory in
-            os.listdir("/home/julius/PycharmProjects/_shared_data/GPSLabels/trajectories")]
+    dirs = ["../_shared_data/GPSLabels/trajectories/" + directory for directory in
+            os.listdir("../_shared_data/GPSLabels/trajectories")]
     for directory in tqdm(dirs):
         label_trajectories(directory)
 
 
 def main_data_import():
     tmp_data_path = "/home/julius/Downloads/Geolife Trajectories 1.3/Data/"
-    workspace_data_path = "/home/julius/PycharmProjects/_shared_data/GPSLabels/trajectories/"
+    workspace_data_path = "../_shared_data/GPSLabels/trajectories/"
     copy_useful_data_to_workspace(tmp_data_path, workspace_data_path)
 
 
